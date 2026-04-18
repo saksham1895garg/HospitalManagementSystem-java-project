@@ -28,12 +28,10 @@ public class BillDAO {
 
     public List<Bill> getAllBills() {
         List<Bill> list = new ArrayList<>();
-        String sql = """
-            SELECT b.*, p.name AS patient_name
-            FROM bills b
-            JOIN patients p ON b.patient_id = p.patient_id
-            ORDER BY b.bill_date DESC
-            """;
+        String sql = "SELECT b.*, p.name AS patient_name " +
+                "FROM bills b " +
+                "JOIN patients p ON b.patient_id = p.patient_id " +
+                "ORDER BY b.bill_date DESC";
         try (Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) list.add(mapRow(rs));

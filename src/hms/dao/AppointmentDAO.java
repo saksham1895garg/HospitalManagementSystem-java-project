@@ -33,13 +33,11 @@ public class AppointmentDAO {
 
     public List<Appointment> getAllAppointments() {
         List<Appointment> list = new ArrayList<>();
-        String sql = """
-            SELECT a.*, p.name AS patient_name, d.name AS doctor_name
-            FROM appointments a
-            JOIN patients p ON a.patient_id = p.patient_id
-            JOIN doctors  d ON a.doctor_id  = d.doctor_id
-            ORDER BY a.appointment_date, a.appointment_time
-            """;
+        String sql = "SELECT a.*, p.name AS patient_name, d.name AS doctor_name " +
+                "FROM appointments a " +
+                "JOIN patients p ON a.patient_id = p.patient_id " +
+                "JOIN doctors d ON a.doctor_id = d.doctor_id " +
+                "ORDER BY a.appointment_date, a.appointment_time";
         try (Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) list.add(mapRow(rs));
@@ -51,14 +49,12 @@ public class AppointmentDAO {
 
     public List<Appointment> getAppointmentsByDoctor(int doctorId) {
         List<Appointment> list = new ArrayList<>();
-        String sql = """
-            SELECT a.*, p.name AS patient_name, d.name AS doctor_name
-            FROM appointments a
-            JOIN patients p ON a.patient_id = p.patient_id
-            JOIN doctors  d ON a.doctor_id  = d.doctor_id
-            WHERE a.doctor_id = ?
-            ORDER BY a.appointment_date, a.appointment_time
-            """;
+        String sql = "SELECT a.*, p.name AS patient_name, d.name AS doctor_name " +
+                "FROM appointments a " +
+                "JOIN patients p ON a.patient_id = p.patient_id " +
+                "JOIN doctors d ON a.doctor_id = d.doctor_id " +
+                "WHERE a.doctor_id = ? " +
+                "ORDER BY a.appointment_date, a.appointment_time";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, doctorId);
             ResultSet rs = ps.executeQuery();
