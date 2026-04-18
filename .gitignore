@@ -1,0 +1,17 @@
+# IntelliJ files
+.idea/
+*.iml
+out/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+bin/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database credentials — never commit these
+src/hms/dao/DBConnection.java
