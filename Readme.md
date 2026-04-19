@@ -355,12 +355,12 @@ To add screenshots:
 
 ## Team
 
-| Member | Role | Modules |
-|--------|------|---------|
-| Member 1 | Developer | Patient Management + Medical Records |
-| Member 2 | Developer | Doctor Management + Appointments |
-| Member 3 | Developer | Pharmacy + Billing |
-| Member 4 | Developer | Admin + Dashboard + Reports |
+| Member            | Sap Id    | Role | Modules |
+|-------------------|-----------|------|---------|
+| Avishi Meherortra | 590014422 | Developer | Patient Management + Medical Records |
+| Varista Gupta     | 590013578 | Developer | Doctor Management + Appointments |
+| Bhoomi Arora      | 590015099 | Developer | Pharmacy + Billing |
+| Saksham Garg      | 590014997 | Developer | Admin + Dashboard + Reports |
 
 **Institution:** University of Petroleum & Energy Studies (UPES)  
 **Program:** B.Tech Computer Science Engineering  
