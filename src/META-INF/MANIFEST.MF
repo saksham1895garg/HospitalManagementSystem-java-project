@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: hms.Main
+Class-Path: mysql-connector-j-9.6.0.jar
+

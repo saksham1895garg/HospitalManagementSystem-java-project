@@ -316,21 +316,23 @@ Same as IntelliJ steps 4–6 above.
 
 ## Screenshots
 
-> *(Add screenshots of your running application here)*
+### Login
+![Login](screenshots/login.png)
 
-| Screen | Description |
-|--------|-------------|
-| Login | `screenshots/login.png` |
-| Dashboard | `screenshots/dashboard.png` |
-| Patient Panel | `screenshots/patients.png` |
-| Appointment Booking | `screenshots/appointments.png` |
-| Pharmacy | `screenshots/pharmacy.png` |
-| Reports | `screenshots/reports.png` |
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
 
-To add screenshots:
-1. Run the app and take screenshots
-2. Create a `screenshots/` folder in the repo root
-3. Add images and update the paths above
+### Patient Panel
+![Patients](screenshots/patients.png)
+
+### Appointment Booking
+![Appointments](screenshots/appointments.png)
+
+### Pharmacy
+![Pharmacy](screenshots/pharmacy.png)
+
+### Reports
+![Reports](screenshots/reports.png)
 ---
 
 ## Java Concepts Covered
@@ -355,12 +357,12 @@ To add screenshots:
 
 ## Team
 
-| Member            | Sap Id    | Role | Modules |
-|-------------------|-----------|------|---------|
-| Avishi Meherortra | 590014422 | Developer | Patient Management + Medical Records |
-| Varista Gupta     | 590013578 | Developer | Doctor Management + Appointments |
-| Bhoomi Arora      | 590015099 | Developer | Pharmacy + Billing |
-| Saksham Garg      | 590014997 | Developer | Admin + Dashboard + Reports |
+| Member          | Sap Id    | Role | Modules |
+|-----------------|-----------|------|---------|
+| Avishi Mehrotra | 590014422 | Developer | Patient Management + Medical Records |
+| Varista Gupta   | 590013578 | Developer | Doctor Management + Appointments |
+| Bhoomi Arora    | 590015099 | Developer | Pharmacy + Billing |
+| Saksham Garg    | 590014997 | Developer | Admin + Dashboard + Reports |
 
 **Institution:** University of Petroleum & Energy Studies (UPES)  
 **Program:** B.Tech Computer Science Engineering  
