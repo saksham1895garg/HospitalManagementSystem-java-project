@@ -241,7 +241,7 @@ Or simply **double-click** the JAR file on Windows (Java must be installed).
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/HospitalManagementSystem.git
+git clone https://github.com/saksham1895garg/HospitalManagementSystem.git
 cd HospitalManagementSystem
 ```
 
