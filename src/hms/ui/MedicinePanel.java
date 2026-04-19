@@ -70,7 +70,7 @@ public class MedicinePanel extends JPanel {
         JButton updateStockBtn = new JButton("Update Stock");
         JButton deleteBtn      = new JButton("Delete");
         deleteBtn.setBackground(new Color(180, 50, 50));
-        deleteBtn.setForeground(Color.WHITE);
+        deleteBtn.setForeground(Color.RED);
         deleteBtn.setFocusPainted(false);
         bottom.add(updateStockBtn);
         bottom.add(deleteBtn);

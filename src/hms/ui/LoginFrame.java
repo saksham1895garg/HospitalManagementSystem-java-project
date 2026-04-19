@@ -58,7 +58,7 @@ public class LoginFrame extends JFrame {
         gbc.anchor = GridBagConstraints.CENTER;
         loginButton = new JButton("Login");
         loginButton.setBackground(new Color(33, 97, 140));
-        loginButton.setForeground(Color.WHITE);
+        loginButton.setForeground(Color.BLUE);
         loginButton.setFocusPainted(false);
         loginButton.setPreferredSize(new Dimension(120, 35));
         form.add(loginButton, gbc);

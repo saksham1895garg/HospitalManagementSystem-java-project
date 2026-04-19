@@ -35,7 +35,7 @@ public class DoctorPanel extends JPanel {
         JButton showAll   = new JButton("Show All");
         JButton addBtn    = new JButton("+ Add Doctor");
         addBtn.setBackground(new Color(33, 97, 140));
-        addBtn.setForeground(Color.WHITE);
+        addBtn.setForeground(Color.BLACK);
         addBtn.setFocusPainted(false);
 
         top.add(new JLabel("Specialization:"));
@@ -57,7 +57,7 @@ public class DoctorPanel extends JPanel {
         JPanel bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
         JButton deleteBtn = new JButton("Delete");
         deleteBtn.setBackground(new Color(180, 50, 50));
-        deleteBtn.setForeground(Color.WHITE);
+        deleteBtn.setForeground(Color.RED);
         deleteBtn.setFocusPainted(false);
         bottom.add(deleteBtn);
         add(bottom, BorderLayout.SOUTH);

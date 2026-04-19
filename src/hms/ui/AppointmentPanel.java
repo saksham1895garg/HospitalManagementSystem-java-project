@@ -52,10 +52,10 @@ public class AppointmentPanel extends JPanel {
         JButton cancelBtn   = new JButton("Cancel");
         JButton completeBtn = new JButton("Mark Complete");
         completeBtn.setBackground(new Color(39, 174, 96));
-        completeBtn.setForeground(Color.WHITE);
+        completeBtn.setForeground(Color.GREEN);
         completeBtn.setFocusPainted(false);
         cancelBtn.setBackground(new Color(180, 50, 50));
-        cancelBtn.setForeground(Color.WHITE);
+        cancelBtn.setForeground(Color.RED);
         cancelBtn.setFocusPainted(false);
         bottom.add(completeBtn);
         bottom.add(cancelBtn);

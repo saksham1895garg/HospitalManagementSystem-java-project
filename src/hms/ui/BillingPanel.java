@@ -50,7 +50,7 @@ public class BillingPanel extends JPanel {
         revenueLabel.setFont(new Font("Arial", Font.BOLD, 14));
         JButton paidBtn = new JButton("Mark as Paid");
         paidBtn.setBackground(new Color(39, 174, 96));
-        paidBtn.setForeground(Color.WHITE);
+        paidBtn.setForeground(Color.GREEN);
         paidBtn.setFocusPainted(false);
         bottom.add(revenueLabel);
         bottom.add(Box.createHorizontalStrut(20));
