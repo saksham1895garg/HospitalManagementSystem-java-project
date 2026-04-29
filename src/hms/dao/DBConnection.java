@@ -8,7 +8,7 @@ public class DBConnection {
 
     private static final String URL      = "jdbc:mysql://roundhouse.proxy.rlwy.net:41959/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String USER     = "root";
-    private static final String PASSWORD = "YOUR PAsssword here";
+    private static final String PASSWORD = "blvWLJUTbpRpaBiVZYAgDPdDNDAbduWg";
 
     private static Connection connection = null;
 
