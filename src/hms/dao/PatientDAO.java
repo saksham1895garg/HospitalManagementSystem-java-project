@@ -7,11 +7,17 @@ import java.util.List;
 
 public class PatientDAO {
 
-    private Connection conn = DBConnection.getConnection();
+    private Connection getConnectionOrThrow() throws SQLException {
+        Connection conn = DBConnection.getConnection();
+        if (conn == null || conn.isClosed()) {
+            throw new SQLException("Database connection is not available.");
+        }
+        return conn;
+    }
 
     public boolean addPatient(Patient p) {
         String sql = "INSERT INTO patients (name, age, gender, phone, email, blood_group, address) VALUES (?,?,?,?,?,?,?)";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = getConnectionOrThrow().prepareStatement(sql)) {
             ps.setString(1, p.getName());
             ps.setInt   (2, p.getAge());
             ps.setString(3, p.getGender());
@@ -29,7 +35,7 @@ public class PatientDAO {
     public List<Patient> getAllPatients() {
         List<Patient> list = new ArrayList<>();
         String sql = "SELECT * FROM patients";
-        try (Statement st = conn.createStatement();
+        try (Statement st = getConnectionOrThrow().createStatement();
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) list.add(mapRow(rs));
         } catch (SQLException e) {
@@ -40,10 +46,11 @@ public class PatientDAO {
 
     public Patient getPatientById(int id) {
         String sql = "SELECT * FROM patients WHERE patient_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = getConnectionOrThrow().prepareStatement(sql)) {
             ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) return mapRow(rs);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return mapRow(rs);
+            }
         } catch (SQLException e) {
             System.out.println("getPatientById error: " + e.getMessage());
         }
@@ -53,10 +60,11 @@ public class PatientDAO {
     public List<Patient> searchByName(String name) {
         List<Patient> list = new ArrayList<>();
         String sql = "SELECT * FROM patients WHERE name LIKE ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = getConnectionOrThrow().prepareStatement(sql)) {
             ps.setString(1, "%" + name + "%");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) list.add(mapRow(rs));
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) list.add(mapRow(rs));
+            }
         } catch (SQLException e) {
             System.out.println("searchByName error: " + e.getMessage());
         }
@@ -65,7 +73,7 @@ public class PatientDAO {
 
     public boolean updatePatient(Patient p) {
         String sql = "UPDATE patients SET name=?, age=?, phone=?, email=?, blood_group=?, address=? WHERE patient_id=?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = getConnectionOrThrow().prepareStatement(sql)) {
             ps.setString(1, p.getName());
             ps.setInt   (2, p.getAge());
             ps.setString(3, p.getPhone());
@@ -82,7 +90,7 @@ public class PatientDAO {
 
     public boolean deletePatient(int id) {
         String sql = "DELETE FROM patients WHERE patient_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = getConnectionOrThrow().prepareStatement(sql)) {
             ps.setInt(1, id);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {

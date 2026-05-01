@@ -63,6 +63,7 @@ public class PatientPanel extends JPanel {
         JButton deleteBtn = new JButton("Delete");
         deleteBtn.setBackground(new Color(180, 50, 50));
         deleteBtn.setForeground(Color.WHITE);
+        deleteBtn.setForeground(Color.WHITE);
         deleteBtn.setFocusPainted(false);
         bottom.add(editBtn);
         bottom.add(deleteBtn);
